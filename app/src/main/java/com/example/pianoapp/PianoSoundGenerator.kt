@@ -5,13 +5,12 @@ import android.media.AudioFormat
 import android.media.AudioTrack
 import kotlin.math.PI
 import kotlin.math.sin
-import kotlin.thread
+import kotlin.math.exp
 
 object PianoSoundGenerator {
 
-    private val sampleRate = 44100
+    private const val sampleRate = 44100
 
-    // Frequencies for each note (Hz)
     private val noteFrequencies = mapOf(
         "C4" to 261.63f,
         "C#4" to 277.18f,
@@ -30,22 +29,20 @@ object PianoSoundGenerator {
 
     fun playNote(note: String) {
         val frequency = noteFrequencies[note] ?: return
-        thread {
-            val duration = 1.0 // seconds
+        Thread {
+            val duration = 1.0
             val numSamples = (duration * sampleRate).toInt()
             val samples = ShortArray(numSamples)
 
             for (i in 0 until numSamples) {
                 val angle = 2.0 * PI * i * frequency / sampleRate
-                // Add harmonics for a richer piano-like sound
                 val sample = (
                     sin(angle) * 0.6 +
                     sin(2 * angle) * 0.2 +
                     sin(3 * angle) * 0.1 +
                     sin(4 * angle) * 0.05
                 )
-                // Apply decay envelope (piano notes fade out)
-                val envelope = Math.exp(-3.0 * i / numSamples)
+                val envelope = exp(-3.0 * i / numSamples)
                 samples[i] = (sample * envelope * Short.MAX_VALUE).toInt().toShort()
             }
 
@@ -69,10 +66,9 @@ object PianoSoundGenerator {
 
             audioTrack.write(samples, 0, samples.size)
             audioTrack.play()
-
             Thread.sleep((duration * 1000).toLong())
             audioTrack.stop()
             audioTrack.release()
-        }
+        }.start()
     }
 }
