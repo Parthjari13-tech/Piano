@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/primary_dark</item>
+        <item name="colorAccent">@color/primary</item>
+        <item name="android:windowBackground">@color/bg_dark</item>
+    </style>
+
+    <style name="WhiteKey">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:backgroundTint">@color/key_white</item>
+        <item name="android:textColor">@color/key_black</item>
+        <item name="android:textSize">10sp</item>
+        <item name="android:gravity">bottom|center_horizontal</item>
+        <item name="android:paddingBottom">6dp</item>
+        <item name="android:layout_marginHorizontal">1dp</item>
+        <item name="android:elevation">2dp</item>
+        <item name="android:stateListAnimator">@null</item>
+    </style>
+
+    <style name="BlackKey">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">55%</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:backgroundTint">@color/key_black</item>
+        <item name="android:textColor">@color/text_light</item>
+        <item name="android:textSize">7sp</item>
+        <item name="android:gravity">bottom|center_horizontal</item>
+        <item name="android:paddingBottom">4dp</item>
+        <item name="android:elevation">6dp</item>
+        <item name="android:stateListAnimator">@null</item>
+    </style>
+</resources>

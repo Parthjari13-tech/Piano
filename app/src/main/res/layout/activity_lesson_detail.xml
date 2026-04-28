@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/bg_dark">
+
+    <!-- Header -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:gravity="center_vertical">
+
+        <Button
+            android:id="@+id/btn_back_lesson"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="← Back"
+            android:backgroundTint="@color/bg_card"
+            android:textColor="@color/text_light"/>
+
+        <TextView
+            android:id="@+id/tv_lesson_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/text_light"
+            android:gravity="center"/>
+
+        <Button
+            android:id="@+id/btn_restart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Restart"
+            android:backgroundTint="@color/bg_card"
+            android:textColor="@color/text_light"/>
+    </LinearLayout>
+
+    <!-- Lesson Info Card -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/bg_card"
+        android:padding="16dp"
+        android:layout_marginHorizontal="12dp">
+
+        <TextView
+            android:id="@+id/tv_lesson_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:textColor="@color/text_muted"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="12dp"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/tv_instruction"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/primary"/>
+
+            <TextView
+                android:id="@+id/tv_progress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textColor="@color/text_muted"/>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:textColor="@color/text_muted"
+            android:layout_marginTop="6dp"/>
+    </LinearLayout>
+
+    <!-- Spacer -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+    <!-- Piano Keyboard -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginBottom="32dp"
+        android:layout_marginHorizontal="4dp">
+
+        <!-- White Keys -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <Button android:id="@+id/key_c" style="@style/WhiteKey" android:text="C"/>
+            <Button android:id="@+id/key_d" style="@style/WhiteKey" android:text="D"/>
+            <Button android:id="@+id/key_e" style="@style/WhiteKey" android:text="E"/>
+            <Button android:id="@+id/key_f" style="@style/WhiteKey" android:text="F"/>
+            <Button android:id="@+id/key_g" style="@style/WhiteKey" android:text="G"/>
+            <Button android:id="@+id/key_a" style="@style/WhiteKey" android:text="A"/>
+            <Button android:id="@+id/key_b" style="@style/WhiteKey" android:text="B"/>
+            <Button android:id="@+id/key_c5" style="@style/WhiteKey" android:text="C"/>
+        </LinearLayout>
+
+        <!-- Black Keys -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <View android:layout_width="0dp" android:layout_height="0dp" android:layout_weight="0.75"/>
+            <Button android:id="@+id/key_cs" style="@style/BlackKey" android:text="C#"/>
+            <View android:layout_width="0dp" android:layout_height="0dp" android:layout_weight="0.5"/>
+            <Button android:id="@+id/key_ds" style="@style/BlackKey" android:text="D#"/>
+            <View android:layout_width="0dp" android:layout_height="0dp" android:layout_weight="1.75"/>
+            <Button android:id="@+id/key_fs" style="@style/BlackKey" android:text="F#"/>
+            <View android:layout_width="0dp" android:layout_height="0dp" android:layout_weight="0.5"/>
+            <Button android:id="@+id/key_gs" style="@style/BlackKey" android:text="G#"/>
+            <View android:layout_width="0dp" android:layout_height="0dp" android:layout_weight="0.5"/>
+            <Button android:id="@+id/key_as" style="@style/BlackKey" android:text="A#"/>
+            <View android:layout_width="0dp" android:layout_height="0dp" android:layout_weight="0.75"/>
+        </LinearLayout>
+    </FrameLayout>
+</LinearLayout>
