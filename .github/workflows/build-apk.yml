@@ -22,11 +22,16 @@ jobs:
       - name: Set up Android SDK
         uses: android-actions/setup-android@v3
 
-      - name: Fix gradlew permissions and line endings
+      - name: Download gradle-wrapper.jar
+        run: |
+          mkdir -p gradle/wrapper
+          curl -L -o gradle/wrapper/gradle-wrapper.jar \
+            "https://github.com/gradle/gradle/raw/v8.2.0/gradle/wrapper/gradle-wrapper.jar"
+
+      - name: Fix gradlew permissions
         run: |
           sed -i 's/\r//' gradlew
           chmod +x gradlew
-          ls -la gradlew
 
       - name: Build Debug APK
         run: ./gradlew assembleDebug --stacktrace
