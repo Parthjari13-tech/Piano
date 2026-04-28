@@ -23,7 +23,7 @@
 
     <style name="BlackKey">
         <item name="android:layout_width">0dp</item>
-        <item name="android:layout_height">55%</item>
+        <item name="android:layout_height">130dp</item>
         <item name="android:layout_weight">1</item>
         <item name="android:backgroundTint">@color/key_black</item>
         <item name="android:textColor">@color/text_light</item>
